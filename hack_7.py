@@ -9,7 +9,16 @@ text: [] output => [0]
 """
 
 
-def fn_hack_7(s):
-    result = s
-    #...
-    return result
+def fn_hack_7(input_list):
+    list_salida = []
+    for item, _ in enumerate(input_list, 1):
+        if item % 2 == 1:
+            list_salida.append(str(item))
+        else:
+            list_salida.append(int(item))
+    if not input_list:
+        list_salida.append(int("0"))
+    return list_salida
+a = fn_hack_7(["a", "b", "c", "d", "e"])
+b = fn_hack_7([])
+print(f"{a}{b}")
